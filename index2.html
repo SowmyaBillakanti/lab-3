@@ -21,9 +21,15 @@
     <header>
         <h1>The Gallery of Horns</h1>
         <select id="select-keyword">
-            <option value="default">Filter by Keyword</option>
+            <option value="default">Filter</option>
         </select>
     </header>
+    <nav>
+    <label for="title">Sort by Title</label>
+    <input id="title" type="radio" name="sort" value="title"></input>
+    <label for="horns">Sort by Horns</label>
+    <input id="horns" type="radio" name="sort" value="horns"></input>
+    </nav>
     <main>
     </main>
     <button onclick="window.location.href='index.html';">View Previous</button>
@@ -33,6 +39,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js"></script>
     <script src="js/app2.js"></script>
-</body>
-
-</html>
+    </body>
+    
+    </html>
