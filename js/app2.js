@@ -54,8 +54,6 @@ function populateDropdown () {
   })
 }
 
-
-
 let selectedItems = () => {
   $('select').on('change', function() {
     let item = this.value;
@@ -65,3 +63,25 @@ let selectedItems = () => {
   })
 }
 
+let sortTitles = () => {
+  return animalArray.sort((a, b) => a.title > b.title ? 1: -1)
+}
+
+let sortHorns = () => {
+  return animalArray.sort((a, b) => a.horns > b.horns ? 1: -1)
+}
+
+$(() => {
+  $('input[type=radio]').on('change', function() {
+    console.log(this);
+    if (this.value === 'title') {
+      $('main').empty();
+      let newAnimalArr = sortTitles();
+      newAnimalArr.forEach(animal => animal.render());
+    } else {
+      $('main').empty();
+      let newAnimalArr = sortHorns();
+      newAnimalArr.forEach(animal => animal.render());
+    }
+  })
+});
